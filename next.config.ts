@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import { defineConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+export default defineConfig({
+  webpack(config) {
+    // This ensures JSON files are properly handled
+    config.module.rules.push({
+      test: /\.json$/,
+      type: "json",
+    });
+    return config;
+  },
+});
