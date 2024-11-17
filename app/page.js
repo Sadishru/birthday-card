@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import lottie from "lottie-web";
+import loveJson from "../public/love.json";
 
 export default function Welcome() {
   const router = useRouter();
@@ -31,7 +32,7 @@ export default function Welcome() {
         renderer: "svg", // Use SVG rendering
         loop: true, // Make it loop
         autoplay: true, // Auto play the animation
-        animationData: require("../public/love.json"), // Path to your animation JSON file
+        animationData: loveJson,
       });
     }
 
